@@ -1,0 +1,12 @@
+services:
+  go_npm:
+    build:
+      context: ./docker/go
+    container_name: go_npm
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/workspaces/go_npm
+      - ./go_pkg:/go/pkg
+    working_dir: /workspaces/go_npm
